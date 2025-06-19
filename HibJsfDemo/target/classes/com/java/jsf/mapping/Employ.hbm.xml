@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-Oct-2023, 9:34:49 am by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+<class name = "com.java.jsf.model.Employ"  table="Employ">
+             <id name="empno" type="int">
+                   <column name="EMPNO"/>
+                   <generator class= "assigned"/>
+            </id>
+
+<property name="Ename" type="java.lang.String">
+      <column name="Ename"/>
+</property>  
+
+
+<property name="gender">
+       <column name="GENDER"/>
+       <type name="org.hibernate.type.EnumType">
+           <param name="enumClass" >com.java.jsp.model.Gender</param>
+           <param name="type">12</param>
+        </type>
+</property>
+
+
+
+<property name="Dept " type="java.lang.String">
+        <column name="Dept"/>
+</property>
+
+<property name="Desig" type="java.lang.String">
+        <column name="Desig"/>
+</property>
+
+<property name="Basic" type="double">
+<column name="Basic"/>
+</property>
+</class>
+
+
+<query name="showEmploy">
+ from Employ
+</query>
+
+
+</hibernate-mapping>
